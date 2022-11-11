@@ -2,7 +2,7 @@ import { Avatar, Center, HStack, Text } from 'native-base';
 
 export interface ParticipantProps {
   id: string;
-  user: {
+  User: {
     name: string;
     avatarUrl: string;
   };
@@ -20,7 +20,7 @@ export function Participants({participants, count }: Props) {
         participants && participants.map((participant) => (
           <Avatar
             key={participant.id}
-            source={{ uri: participant.user.avatarUrl}}
+            source={{ uri: participant.User.avatarUrl}}
             w={8}
             h={8}
             rounded="full"
@@ -28,7 +28,7 @@ export function Participants({participants, count }: Props) {
             marginRight={-3}
             borderColor="gray.800"
           >
-           {participant.user?.name?.at(0).toUpperCase()}
+           {participant.User.name[0].toUpperCase()}
           </Avatar>
         ))
       }

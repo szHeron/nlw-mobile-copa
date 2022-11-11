@@ -36,7 +36,6 @@ export function AuthContextProvider({children}: AuthContextProps){
 
     useEffect(()=>{
         if(response?.type === 'success' && response.authentication?.accessToken){
-            console.log(response.authentication.accessToken)
             signInWithGoogle(response.authentication.accessToken)
         }
     }, [response]);
